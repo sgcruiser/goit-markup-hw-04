@@ -86,18 +86,6 @@ body {
   display: block;
 }
 
-/* Line -- ?*/
-
-.line {
-  position: absolute;
-  width: 1600px;
-  height: 0px;
-  left: 0px;
-  top: 80px;
-
-  border: 1px solid #ececec;
-}
-
 /* Site nav */
 
 .hat-page {
@@ -172,13 +160,26 @@ body {
 /* Banner */
 
 .banner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  height: 600px;
+
   background-color: var(--dark-color);
-  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/banner.jpg);
+  background-position: center;
 }
 
 .banner .container {
   padding-top: 200px;
   padding-bottom: 200px;
+
+  text-align: center;
 }
 
 .banner-title {
@@ -205,7 +206,7 @@ body {
   padding-right: 32px;
   padding-bottom: 10px;
 
-  border: 0;
+  border: none;
   border-radius: 4px;
 
   background-color: var(--accent-color);
@@ -275,6 +276,33 @@ body {
   margin-right: 30px;
 }
 
+.feature-list .item::before {
+  display: block;
+  margin-bottom: 30px;
+  content: "";
+  height: 120px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-antenna::before {
+  background-image: url(../images/svg/antenna.svg);
+}
+
+.icon-clock::before {
+  background-image: url(../images/svg/clock.svg);
+}
+
+.icon-diagram::before {
+  background-image: url(../images/svg/diagram.svg);
+}
+
+.icon-astronaut::before {
+  background-image: url(../images/svg/astronaut.svg);
+}
+
 .feature-list .text {
   margin-top: 0;
   margin-bottom: 0;
@@ -318,6 +346,12 @@ body {
 
   width: calc((100% - 30px * 3) / 4);
   text-align: center;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  background-color: var(--primary-color);
 }
 
 .team-list .item:not(:last-child) {
@@ -345,6 +379,42 @@ body {
   line-height: 1.19;
 }
 
+/* Clients */
+
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients .title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-weight: bold;
+  font-size: 36px;
+  line-height: calc(42 / 36);
+  text-align: center;
+
+  color: var(--secondary-text-color);
+}
+
+.client-list {
+  display: flex;
+}
+
+.client-list .item {
+  width: 170px;
+  height: 90px;
+
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.client-list .item + .item {
+  margin-left: 10px;
+}
+
 /* Footer */
 
 .footer {
@@ -352,6 +422,10 @@ body {
 
   color: #ffffff;
   line-height: calc(21 / 14);
+}
+
+.footer-box {
+  display: flex;
 }
 
 .footer .title {
@@ -364,11 +438,14 @@ body {
   padding-bottom: 20px;
 }
 
+/* Address */
+
 .main-address {
+  margin-right: 70px;
   padding-top: 60px;
   padding-bottom: 60px;
 
-  width: 370px;
+  max-width: 231px;
 }
 
 .main-address .text {
@@ -393,9 +470,70 @@ body {
   margin-top: 9px;
 }
 
+/* Social link */
+
+.social {
+  padding-top: 72px;
+}
+
+.social .title {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+}
+
+.social-list {
+  display: flex;
+}
+
+.social .item {
+  height: 44px;
+}
+
+.social-list .item + .item {
+  margin-left: 10px;
+}
+.social .link {
+  display: inline-block;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.social .link:hover,
+.social .link:focus {
+  background-color: var(--accent-color);
+}
+
+.instagram-link {
+  background-image: url(../images/svg/instagram.svg);
+}
+
+.twitter-link {
+  background-image: url(../images/svg/twitter.svg);
+}
+
+.facebook-link {
+  background-image: url(../images/svg/facebook.svg);
+}
+
+.linkedin-link {
+  background-image: url(../images/svg/linkedin.svg);
+}
+
 /* ----- Стили  страницы portfolio.html ----- */
 
-/* Fiter */
+/* Filter */
 
 .filter {
   padding-top: 94px;
@@ -470,6 +608,12 @@ body {
 
   /*  адаптивная ширина блоков */
   width: calc((100% - 30px * 2) / 3);
+
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  background-color: var(--primary-color);
 }
 
 .catalog-list .item:nth-child(3n) {
